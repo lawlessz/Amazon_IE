@@ -1,11 +1,11 @@
 
-public class grid {
+public class Grid {
 
 	public int[][] table;//tb initialized
 	
 	
 	//units and cb_size tbd
-	public grid(int xdim, int ydim, int zdim, int cb_size) {
+	public Grid(int xdim, int ydim, int zdim, int cb_size) {
 		table = new int[xdim][ydim];
 		populate(table, xdim, ydim);
 		
