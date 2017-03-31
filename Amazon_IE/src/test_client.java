@@ -8,7 +8,7 @@ public class test_client {
 	
 		
 		//System.out.println("here");
-		Grid x = new Grid(10,10,10,1);
+		Grid x = new Grid(15,15,10,1);
 		printArray(x.table);
 		
 	}
