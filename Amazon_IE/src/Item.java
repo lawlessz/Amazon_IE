@@ -9,5 +9,10 @@ public class Item {
 	public int ydim;
 	public int zdim;
 	
+	public Item (int x, int y, int z) {
+		this.xdim = x;
+		this.ydim = y;
+		this.zdim = z;
+	}
 	
 }
