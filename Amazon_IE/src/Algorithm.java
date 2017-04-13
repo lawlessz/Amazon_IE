@@ -13,7 +13,7 @@ public class Algorithm {
 		for (int i = 0; i<g.xdimen; i++) {
 			for (int j = 0; j<g.ydimen; j++){
 				if(g.table[i][j] == "00"){//if empty then we look for complete space
-				System.out.println("true");	
+				//System.out.println("true");	
 				}
 			}
 		}
