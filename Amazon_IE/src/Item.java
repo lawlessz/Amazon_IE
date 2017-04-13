@@ -8,6 +8,7 @@ public class Item {
 	public int xdim;//these may need to be parsed
 	public int ydim;
 	public int zdim;
+	public String numS = "-2";
 	
 	public Item (int x, int y, int z) {
 		this.xdim = x;

@@ -11,15 +11,19 @@ public class test_client {
 	    Item i3 = new Item(8,5,0);
 	    Item i4 = new Item(4,5,0);
 	    Item i5 = new Item(2,8,0);
-	    Item[] arr = new Item[4];
+	    Item[] arr = new Item[5];
 	    
-	    //arr[0] = i1;arr[1] = i2;arr[2] = i3;arr[3] = i4;arr[4] = i5;
+	    arr[0] = i1;arr[1] = i2;arr[2] = i3;arr[3] = i4;arr[4] = i5;
 	    
 		//System.out.println("here");
-		Grid x = new Grid(15,15,10,1);
+		Grid x = new Grid(48,33,10,1);
 		Algorithm A = new Algorithm(x.table);
 		printArray(x.table);
 		A.find_Empty(x, i1);
+		
+	}
+	
+	public static void place(){
 		
 	}
 	
