@@ -115,6 +115,7 @@ public class Algorithm {
 	
 	//places item
     public void placeItem(String[][] mat, Item I, int orient, int x, int y) {
+
 	    if (orient == 12) { // north then east but east first
 	        for (int i = x; i < x + I.xdim; i++) {
 	            for (int j = y; j < y + I.ydim; j++) {
@@ -172,7 +173,7 @@ public class Algorithm {
 	}
 
 	
-	// finds the corners of the space remaining in the box
+	// (Matt) - finds the corners of the space remaining in the box
 	   public static int[][] findCorners(String matrix[][]) {
 	      int[][] cornerdata = new int[20][4];
 	      cornerdata[0][0] = 0; // counts number of corners found

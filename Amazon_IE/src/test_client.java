@@ -1,4 +1,6 @@
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 //NEW CHANGE
 public class test_client {
@@ -18,13 +20,43 @@ public class test_client {
 		//System.out.println("here");
 		Grid x = new Grid(48,33,10,1);
 		Algorithm A = new Algorithm(x.table);
-		printArray(x.table);
+		
+		
 		A.find_Empty(x, i1);
+		A.placeItem(x.table,i1,12,1,1);
+		printArray(x.table);
+		//printItemsArea(arr);
+		arr = defaultAreaSort(arr);//sort by area
+		printItemsArea(arr);
+		int [][] corners = A.findCorners(x.table);
 		
 	}
 	
 	public static void place(){
 		
+	}
+	
+	//sorts items puts biggest area first
+	public static Item[] defaultAreaSort(Item[] items) {
+		Item[] sorted = new Item[items.length];
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+		for(int i = 0; i < items.length; i++){
+			temp.add(items[i].xdim*items[i].ydim);
+		}
+		Collections.sort(temp);
+		Collections.reverse(temp);
+		for(int i = 0; i < items.length; i++){
+			int x = items[i].xdim*items[i].ydim;
+			sorted[temp.indexOf(x)] = items[i];
+		}
+		return sorted;
+	}
+	
+	public static void printItemsArea(Item[] I){
+		for(int i = 0; i < I.length; i++){
+			System.out.println(I[i].xdim*I[i].ydim);
+			
+		}
 	}
 	
 	public static void printArray(String matrix[][]) {
