@@ -1,4 +1,4 @@
-
+//ROWS THEN COLUMNS might have messed this up
 public class Grid {
 
 	public String[][] table;//tb initialized
@@ -10,7 +10,6 @@ public class Grid {
 		this.xdimen = xdim+2;
 		this.ydimen = ydim+2;
 		table = new String[xdim+2][ydim+2];
-		//populate(table, xdim, ydim);
 		populate(table,xdim+2,ydim+2);
 		
 	}

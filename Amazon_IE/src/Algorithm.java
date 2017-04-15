@@ -1,4 +1,4 @@
-//several parts to a whole, brute force and basic attempts
+//several parts to a whole, brute force and basic/(not clever) attempts
 //
 public class Algorithm {
 
@@ -19,7 +19,7 @@ public class Algorithm {
 		}
 	}
 	
-	
+	//todelete?
 	public static void space_Item(int coordX, int coordY, Grid g, Item rect){
 		boolean t = true;
 		int count = 0;
@@ -28,7 +28,7 @@ public class Algorithm {
 		}
 	}
 	
-	//return true if item fits in grid
+	//return true if item fits in grid (OUTDATED? need to figure out structure)
 	public static boolean place(int x, int y, Grid g, Item rect){
 		for (int i = x; i<rect.xdim; i++) {
 			for (int j = y; j<rect.ydim; j++) {
@@ -113,7 +113,7 @@ public class Algorithm {
 	    return true;
     }
 	
-	//places item
+	//places item //need to rethink for [y][x]
     public void placeItem(String[][] mat, Item I, int orient, int x, int y) {
 
 	    if (orient == 12) { // north then east but east first
@@ -220,4 +220,41 @@ public class Algorithm {
 	      System.out.println();
 	      return cornerdata;
 	   }
+	   
+	   //returns int of all whitespace cubits to borders
+	   public int countWhitespace(Grid g, int xloc, int yloc, Item I){
+		   int total = 0;
+		   int h = 1;
+		   for(int i = xloc; i < xloc+I.xdim; i++){
+			   while(g.table[i][yloc-h] == "00"){
+				   total++;
+				   h++;
+			   }
+			   h = 1;
+		   }
+		   for(int j = xloc; j < xloc+I.xdim; j++){
+			   while(g.table[j][yloc+I.ydim+h] == "00"){
+				   total++;
+				   h++;
+			   }
+			   h = 1;
+		   }
+		   for(int k = yloc; k < yloc+I.ydim; k++){
+			   while(g.table[xloc-h][k] == "00"){
+				   total++;
+				   h++;
+			   }
+			   h = 1;
+		   }
+		   for(int l = yloc; l < yloc+I.ydim; l++){
+			   while(g.table[xloc+I.xdim+h][l] == "00"){
+				   total++;
+				   h++;
+			   }
+			   h = 1;
+		   }
+		   
+		   return total+I.xdim+I.ydim;//wow hacked to work be careful and figure out what happened
+	   }
+	   
 }

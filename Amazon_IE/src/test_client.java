@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-//NEW CHANGE
+//Item methods need to eventually be moved to the item class...
 public class test_client {
 
 	
@@ -17,17 +17,22 @@ public class test_client {
 	    
 	    arr[0] = i1;arr[1] = i2;arr[2] = i3;arr[3] = i4;arr[4] = i5;
 	    
-		//System.out.println("here");
-		Grid x = new Grid(48,33,10,1);
+		Grid x = new Grid(33,48,10,1);
 		Algorithm A = new Algorithm(x.table);
 		
 		
+
+		arr = defaultAreaSort(arr);//sort by area
+		updateItemNumbers(arr);//update numbers
+		//printItemsArea(arr);
+		
 		A.find_Empty(x, i1);
 		A.placeItem(x.table,i1,12,1,1);
+		int space1 = A.countWhitespace(x, 1, 1, i1);
+		System.out.println(space1);
+		
+		
 		printArray(x.table);
-		//printItemsArea(arr);
-		arr = defaultAreaSort(arr);//sort by area
-		printItemsArea(arr);
 		int [][] corners = A.findCorners(x.table);
 		
 	}
@@ -36,7 +41,7 @@ public class test_client {
 		
 	}
 	
-	//sorts items puts biggest area first
+	//sorts items puts biggest area first - to be moved
 	public static Item[] defaultAreaSort(Item[] items) {
 		Item[] sorted = new Item[items.length];
 		ArrayList<Integer> temp = new ArrayList<Integer>();
@@ -52,6 +57,7 @@ public class test_client {
 		return sorted;
 	}
 	
+	//to be moved to item class
 	public static void printItemsArea(Item[] I){
 		for(int i = 0; i < I.length; i++){
 			System.out.println(I[i].xdim*I[i].ydim);
@@ -59,6 +65,7 @@ public class test_client {
 		}
 	}
 	
+	//to be moved to grid class?
 	public static void printArray(String matrix[][]) {
 	    for (int row = 0; row < matrix.length; row++) {
 	        for (int column = 0; column < matrix[row].length; column++) {
@@ -68,4 +75,11 @@ public class test_client {
 	    }
 	}
 	
+	//to be moved to item class
+	public static void updateItemNumbers(Item[] I){
+		for(int i = 0; i < I.length; i++){
+			I[i].numS = Integer.toString(i+1) + Integer.toString(i+1);
+			//System.out.println(I[i].numS);
+		}
+	}
 }
