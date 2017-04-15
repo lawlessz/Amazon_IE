@@ -222,6 +222,8 @@ public class Algorithm {
 	   }
 	   
 	   //returns int of all whitespace cubits to borders
+	   //update all backwards from the xy-yx thing but works
+	   //needs to be tested further
 	   public int countWhitespace(Grid g, int xloc, int yloc, Item I){
 		   int total = 0;
 		   int h = 1;

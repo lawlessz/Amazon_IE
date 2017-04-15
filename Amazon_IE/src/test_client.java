@@ -27,8 +27,8 @@ public class test_client {
 		//printItemsArea(arr);
 		
 		A.find_Empty(x, i1);
-		A.placeItem(x.table,i1,12,1,1);
-		int space1 = A.countWhitespace(x, 1, 1, i1);
+		A.placeItem(x.table,i1,12,5,5);
+		int space1 = A.countWhitespace(x, 5, 5, i1);
 		System.out.println(space1);
 		
 		
