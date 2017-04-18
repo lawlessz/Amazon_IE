@@ -48,7 +48,7 @@ public class Algorithm {
 	    if (orient == 12) { // north then east but east first
 	        for (int i = x; i < x + I.xdim; i++) {
 	            for (int j = y; j < y + I.ydim; j++) {
-	                if(mat[i][j] != "00") {
+	                if(mat[j][i] != "00") {
 	                	return false;
 	                }
 	             }
@@ -56,7 +56,7 @@ public class Algorithm {
 	      } else if (orient == 14) { // north then west but west first
 	            for (int i = x; i < x - I.xdim; i++) {
 	                for (int j = y; j < y + I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 	                }
@@ -64,7 +64,7 @@ public class Algorithm {
 	      } else if (orient == 21) { // northeast east first
 	           for (int i = x; i < x + I.xdim; i++) {
 	               for (int j = y; j < y + I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 	              }
@@ -72,7 +72,7 @@ public class Algorithm {
 	      } else if (orient == 23) { // southeast but west first
 	           for (int i = x; i < x + I.xdim; i++) {
 		           for (int j = y; j < y - I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 		              }
@@ -80,7 +80,7 @@ public class Algorithm {
 		  } else if (orient == 32) { // south east
 		        for (int i = x; i < x + I.xdim; i++) {
 			        for (int j = y; j < y - I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 			        }
@@ -88,7 +88,7 @@ public class Algorithm {
 		  } else if (orient == 34) { // south west
 		        for (int i = x; i < x - I.xdim; i++) {
 			        for (int j = y; j < y - I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 			        }
@@ -96,7 +96,7 @@ public class Algorithm {
 		  } else if (orient == 41) { // west north
 		        for (int i = x; i < x - I.xdim; i++) {
 			        for (int j = y; j < y + I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 			        }
@@ -104,7 +104,7 @@ public class Algorithm {
 		  } else if (orient == 43) { // north then west but west first
 		        for (int i = x; i < x - I.xdim; i++) {
 			        for (int j = y; j < y - I.ydim; j++) {
-		                if(mat[i][j] != "00") {
+		                if(mat[j][i] != "00") {
 		                	return false;
 		                }
 			        }
@@ -119,49 +119,49 @@ public class Algorithm {
 	    if (orient == 12) { // north then east but east first
 	        for (int i = x; i < x + I.xdim; i++) {
 	            for (int j = y; j < y + I.ydim; j++) {
-	                mat[i][j] = I.numS;
+	                mat[j][i] = I.numS;
 	             }
 	         }
 	      } else if (orient == 14) { // north then west but west first
 	            for (int i = x; i < x - I.xdim; i++) {
 	                for (int j = y; j < y + I.ydim; j++) {
-	                    mat[i][j] = I.numS;
+	                    mat[j][i] = I.numS;
 	                }
 	            }
 	      } else if (orient == 21) { // northeast east first
 	           for (int i = x; i < x + I.xdim; i++) {
 	               for (int j = y; j < y + I.ydim; j++) {
-	                  mat[i][j] = I.numS;
+	                  mat[j][i] = I.numS;
 	              }
 	           }
 	      } else if (orient == 23) { // southeast but west first
 	           for (int i = x; i < x + I.xdim; i++) {
 		           for (int j = y; j < y - I.ydim; j++) {
-		               mat[i][j] = I.numS;
+		               mat[j][i] = I.numS;
 		              }
 		       }
 		  } else if (orient == 32) { // south east
 		        for (int i = x; i < x + I.xdim; i++) {
 			        for (int j = y; j < y - I.ydim; j++) {
-			            mat[i][j] = I.numS;
+			            mat[j][i] = I.numS;
 			        }
 			    }
 		  } else if (orient == 34) { // south west
 		        for (int i = x; i < x - I.xdim; i++) {
 			        for (int j = y; j < y - I.ydim; j++) {
-			            mat[i][j] = I.numS;
+			            mat[j][i] = I.numS;
 			        }
 			    }
 		  } else if (orient == 41) { // west north
 		        for (int i = x; i < x - I.xdim; i++) {
 			        for (int j = y; j < y + I.ydim; j++) {
-			            mat[i][j] = I.numS;
+			            mat[j][i] = I.numS;
 			        }
 			    }
 		  } else if (orient == 43) { // north then west but west first
 		        for (int i = x; i < x - I.xdim; i++) {
 			        for (int j = y; j < y - I.ydim; j++) {
-			            mat[i][j] = I.numS;
+			            mat[j][i] = I.numS;
 			        }
 			    }
 		  }
@@ -227,36 +227,41 @@ public class Algorithm {
 	   public int countWhitespace(Grid g, int xloc, int yloc, Item I){
 		   int total = 0;
 		   int h = 1;
+		   //System.out.println(I.xdim);
 		   for(int i = xloc; i < xloc+I.xdim; i++){
-			   while(g.table[i][yloc-h] == "00"){
+			   while(g.table[yloc-h][i] == "00"){
 				   total++;
 				   h++;
+
 			   }
 			   h = 1;
 		   }
 		   for(int j = xloc; j < xloc+I.xdim; j++){
-			   while(g.table[j][yloc+I.ydim+h] == "00"){
+			   while(g.table[yloc+I.ydim+h-1][j] == "00"){
 				   total++;
 				   h++;
+
 			   }
 			   h = 1;
 		   }
 		   for(int k = yloc; k < yloc+I.ydim; k++){
-			   while(g.table[xloc-h][k] == "00"){
+			   while(g.table[k][xloc-h] == "00"){
 				   total++;
 				   h++;
 			   }
 			   h = 1;
 		   }
 		   for(int l = yloc; l < yloc+I.ydim; l++){
-			   while(g.table[xloc+I.xdim+h][l] == "00"){
+			   while(g.table[l][xloc+I.xdim+h-1] == "00"){
 				   total++;
 				   h++;
+				   System.out.println(l);
 			   }
 			   h = 1;
 		   }
 		   
-		   return total+I.xdim+I.ydim;//wow hacked to work be careful and figure out what happened
+		   //return total+I.xdim+I.ydim;//wow hacked to work be careful and figure out what happened
+		   return total;
 	   }
 	   
 }
