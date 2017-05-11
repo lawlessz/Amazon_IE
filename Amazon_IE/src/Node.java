@@ -6,8 +6,8 @@ import java.util.List;
 public class Node {
 
 	Grid g;
-	Item[] arr;
-	int[][] placement;
+	private Item[] arr;
+	private int[][] placement;
 	int currIndex = 0;
 	List<Node> Nodes = new ArrayList<Node>();
 	boolean isComplete;
@@ -18,18 +18,23 @@ public class Node {
 	//root node constructor
 	public Node(Grid g, Item[] arr, int currIndex){
 		this.g = g;
-		this.arr = arr;
+		this.setArr(arr);
 		this.currIndex = currIndex;
-		placement = new int[arr.length][2];//5 item run
+		setPlacement(new int[arr.length][2]);//5 item run
 	}
 	
+	private Item[] copyArr(Item[] arr2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public Node(Grid g, Item[] arr, int currIndex, Node parent, int[][] placementHold){
 		this.g = g;
-		this.arr = arr;
+		this.setArr(arr);
 		this.currIndex = currIndex;
 		//this.Nodes = nodes;
 		this.parentNode = parent;
-		placement = placementHold;//5 item run
+		setPlacement(placementHold);//5 item run
 	}
 	
 	
@@ -47,6 +52,22 @@ public class Node {
 	        System.out.println();
 	    }
 
+	}
+
+	public Item[] getArr() {
+		return arr;
+	}
+
+	public void setArr(Item[] arr) {
+		this.arr = arr;
+	}
+
+	public int[][] getPlacement() {
+		return placement;
+	}
+
+	public void setPlacement(int[][] placement) {
+		this.placement = placement;
 	}
 	
 	

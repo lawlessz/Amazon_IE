@@ -337,13 +337,24 @@ public class Algorithm {
 		   int total = 0;
 		   int h = 1;
 		   //System.out.println(I.xdim);
-		   //System.out.println(I.numS + "-THE ITEM");
+		   System.out.println(I.numS + "-THE ITEM");
+		   //printArray(g.table);
 		   for(int i = xloc; i < xloc+I.xdim; i++){
-			  // System.out.println(i);
-			  // System.out.println(yloc);
-			  // System.out.println(yloc-h);
-			   
+			   /*
+			   System.out.println(i+"<i");
+			   System.out.println(yloc+"<yloc");
+			   System.out.println(yloc-h+"<yloc-h");
+			   System.out.println(xloc+"<xloc");
+			   System.out.println(I.xdim+ xloc);
+			   System.out.println(I.xdim+ "currx");
+			   System.out.println(I.ydim+ "curry");
+			   System.out.println(I.zdim+ "currz");
+			   System.out.println(I.xdim2+ "realx");
+			   System.out.println(I.ydim2+ "realy");
+			   System.out.println(I.zdim2+ "realz");
+			   */
 			   while(g.table[yloc-h][i] == "00"){
+				   System.out.println("went in");
 				   total++;
 				   h++;
 
@@ -392,8 +403,8 @@ public class Algorithm {
 		  // System.out.println("HWEREWWEJREWRR");
 		   //printArray(n.placement);
 		   int total = 0;
-		   for(int i = 0; i < n.arr.length; i++){
-			   total += countWhitespace(n.g,n.placement[i][0],n.placement[i][1], n.arr[i]);
+		   for(int i = 0; i < n.getArr().length; i++){
+			   total += countWhitespace(n.g,n.getPlacement()[i][0],n.getPlacement()[i][1], n.getArr()[i]);
 			   //System.out.println(total + "<TOTALPARTIAL");
 		   }
 		   return total;
@@ -409,5 +420,13 @@ public class Algorithm {
 		        System.out.println();
 		    }
 		}
-	   
+		public static void printArray(String matrix[][]) {
+
+		    for (int row = 0; row < matrix.length; row++) {
+		        for (int column = 0; column < matrix[row].length; column++) {
+		            System.out.print(matrix[row][column] + " ");
+		        }
+		        System.out.println();
+		    }
+		}
 }
