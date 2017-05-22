@@ -1,10 +1,15 @@
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 //Item methods need to eventually be moved to the item class...
-public class test_client {
+public class test_client implements java.io.Serializable {
 public static int numberOUT = 0;
 	
 	public static void main(String [] args) {
@@ -22,7 +27,7 @@ public static int numberOUT = 0;
 		Grid x = new Grid(20,20,10,1);
 		Algorithm A = new Algorithm(x.table);
 		
-		Grid sandbox = new Grid(10,10,10,1);
+		//Grid sandbox = new Grid(10,10,10,1);
 		//Algorithm b = new Algorithm(sandbox.table);
 		//A.placeItem(sandbox.table,arr[3],12,4,2);
 		//A.placeItem(sandbox.table,i5,12,9,2);
@@ -37,12 +42,17 @@ public static int numberOUT = 0;
 		//A.find_Empty(x, i1);
 		
 		Node rootx = new Node(x, arr, 1);  //new node that is a root
-		A.placeItem(x,i1,32,1,1,rootx);
-
+		A.placeItem(x,i1,32,1,1,rootx,rootx.currIndex);
+		i1.placedx = 1;
+		i1.placedy = 1;
+		
 
 		rootx.parentNode = rootx;  //root's parent node is itself
 		rootx.getPlacement()[rootx.currIndex-1][0] = 1;
 		rootx.getPlacement()[rootx.currIndex-1][1] = 1;
+		rootx.getPlacement()[rootx.currIndex-1][2] = 10;
+		rootx.getPlacement()[rootx.currIndex-1][3] = 5;
+		rootx.getPlacement()[rootx.currIndex-1][4] = 4;
 		//A.placeItem(x.table,i3,12,15,4);
 		//A.placeItem(x.table,i5,12,28,4);
 		//int space1 = A.countWhitespace(x, 5, 5, i1);
@@ -61,15 +71,22 @@ public static int numberOUT = 0;
 		
 		//updateResult(rootx, R);
 		
+		
 		updateAll(rootx, R);
 		
 		//printAllFinished(rootx);
 		
 		Collections.sort(R.listN, new whitespaceComparator());
 
-		printList(R.listN);
+		//printList(R.listN);
+		ReadExcelFileV2 XFILE = new ReadExcelFileV2();
+		XFILE.readExcel();
 	}
 	
+	
+	public static void orderOnAllBox(){
+		
+	}
 	
 	
 
@@ -83,6 +100,7 @@ public static int numberOUT = 0;
 			int[][] cornersCurr = a.findCorners(n.g.table);
 		      for (int j = 1; j <= cornersCurr[0][0]; j++) {
 		    	     int y = cornersCurr[j][0];
+		    	     System.out.println(y + "<-THIS IS Y");
 		    	     int x = cornersCurr[j][1];
 			         String s = String.valueOf(cornersCurr[j][2]) + String.valueOf(cornersCurr[j][3]);
 			         int c = Integer.parseInt(s);
@@ -93,32 +111,34 @@ public static int numberOUT = 0;
 			         
 			         if(a.checkPlace(g, n.getArr()[i], c, x, y)){//xy
 			        	 Grid gnew = new Grid(g);
-			        	 Node newNode = new Node(gnew, n.getArr().clone(), n.currIndex+1, n, n.getPlacement());
-			        	 a.placeItem(newNode.g, newNode.getArr()[newNode.currIndex-1], c, x, y, newNode);
-			        	 newNode.getPlacement()[n.currIndex][0] = y;
-			        	 newNode.getPlacement()[n.currIndex][1] = x;
-			        	 if(x==20){
-			        		 System.out.println("FOUND THE ROGUE X");
-			        		 System.out.println(y);
-			        	 }
+			        	 Node newNode = new Node(gnew, deepCloneArr(n.getArr()), n.currIndex+1, n, n.getPlacement());
+			        	 a.placeItem(newNode.g, newNode.getArr()[newNode.currIndex-1], c, x, y, newNode, newNode.currIndex-1);
+			        	 System.out.println(newNode.getArr()[newNode.currIndex-1].placedy + "Placedy");
+			        	 newNode.getPlacement()[n.currIndex][0] = newNode.getArr()[newNode.currIndex-1].placedx;
+			        	 newNode.getPlacement()[n.currIndex][1] = newNode.getArr()[newNode.currIndex-1].placedy;
+			        	 newNode.getPlacement()[n.currIndex][2] = n.getArr()[i].xdim;
+			        	 newNode.getPlacement()[n.currIndex][3] = n.getArr()[i].ydim;
+			        	 newNode.getPlacement()[n.currIndex][4] = n.getArr()[i].zdim;
 			        	 newNode.parentNode = n;
 			        	 n.Nodes.add(newNode);
-                         testRun(newNode.getArr(), newNode.g, newNode);
+                         testRun(deepCloneArr(newNode.getArr()), newNode.g, newNode);
 			         }
 			         int xh = n.getArr()[i].xdim;
 			         n.getArr()[i].setX(n.getArr()[i].zdim);
 			         n.getArr()[i].setZ(n.getArr()[i].xdim);
-			         
 			         if(a.checkPlace(g, n.getArr()[i], c, x, y)){//zy
 			        	 Grid gnew = new Grid(g);
-			        	 Node newNode = new Node(gnew, n.getArr().clone(), n.currIndex+1, n, n.getPlacement());
-			        	 a.placeItem(newNode.g, newNode.getArr()[newNode.currIndex-1], c, x, y, newNode);
-			        	 newNode.getPlacement()[n.currIndex][0] = y;
-			        	 newNode.getPlacement()[n.currIndex][1] = x;
+			        	 Node newNode = new Node(gnew, deepCloneArr(n.getArr()), n.currIndex+1, n, n.getPlacement());
+			        	 a.placeItem(newNode.g, newNode.getArr()[newNode.currIndex-1], c, x, y, newNode, newNode.currIndex-1);
+			        	 newNode.getPlacement()[n.currIndex][0] = newNode.getArr()[newNode.currIndex-1].placedx;
+			        	 newNode.getPlacement()[n.currIndex][1] = newNode.getArr()[newNode.currIndex-1].placedy;
+			        	 newNode.getPlacement()[n.currIndex][2] = n.getArr()[i].xdim;
+			        	 newNode.getPlacement()[n.currIndex][3] = n.getArr()[i].ydim;
+			        	 newNode.getPlacement()[n.currIndex][4] = n.getArr()[i].zdim;
 			        	 newNode.parentNode = n;
 			        	 n.Nodes.add(newNode);
-
-                         testRun(newNode.getArr(), newNode.g, newNode);
+			        	 //System.out.println(newNode.getArr()[newNode.currIndex-1].placedy + "Placedy");
+                         testRun(deepCloneArr(newNode.getArr()), newNode.g, newNode);
 			         }
 			         n.getArr()[i].setX(n.getArr()[i].xdim2);
 			         n.getArr()[i].setY(n.getArr()[i].ydim2);
@@ -130,12 +150,16 @@ public static int numberOUT = 0;
 			         if(a.checkPlace(g, n.getArr()[i], c, x, y)){//zx
 			        	 Grid gnew = new Grid(g);
 			        	 Node newNode = new Node(gnew, n.getArr().clone(), n.currIndex+1, n, n.getPlacement());
-			        	 a.placeItem(newNode.g, newNode.getArr()[newNode.currIndex-1], c, x, y, newNode);
-			        	 newNode.getPlacement()[n.currIndex][0] = y;
-			        	 newNode.getPlacement()[n.currIndex][1] = x;
+			        	 a.placeItem(newNode.g, newNode.getArr()[newNode.currIndex-1], c, x, y, newNode, newNode.currIndex-1);
+			        	 newNode.getPlacement()[n.currIndex][0] = newNode.getArr()[newNode.currIndex-1].placedx;
+			        	 newNode.getPlacement()[n.currIndex][1] = newNode.getArr()[newNode.currIndex-1].placedy;
+			        	 newNode.getPlacement()[n.currIndex][2] = n.getArr()[i].xdim;
+			        	 newNode.getPlacement()[n.currIndex][3] = n.getArr()[i].ydim;
+			        	 newNode.getPlacement()[n.currIndex][4] = n.getArr()[i].zdim;
 			        	 newNode.parentNode = n;
 			        	 n.Nodes.add(newNode);
-                         testRun(newNode.getArr(), newNode.g, newNode);
+			        	 System.out.println(newNode.getArr()[newNode.currIndex-1].placedy + "Placedy");
+                         testRun(deepCloneArr(newNode.getArr()), newNode.g, newNode);
 			         }
 			         n.getArr()[i].setX(n.getArr()[i].xdim2);
 			         n.getArr()[i].setY(n.getArr()[i].ydim2);
@@ -244,7 +268,46 @@ public static int numberOUT = 0;
 			
 		}
 	}
-}
+	
+	public static Item[] deepCloneArr(Item[] arr){
+		Item [] arrNew = new Item[arr.length];
+		for(int i = 0; i < arr.length; i++){
+			arrNew[i] = (Item) copy(arr[i]);
+		}
+		return arrNew;
+	}
+	
+	/**
+	 * This method makes a "deep clone" of any Java object it is given.
+	 */
+	   public static Object copy(Object orig) {
+	        Object obj = null;
+	        try {
+	            // Write the object out to a byte array
+	            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+	            ObjectOutputStream out = new ObjectOutputStream(bos);
+	            out.writeObject(orig);
+	            out.flush();
+	            out.close();
+
+	            // Make an input stream from the byte array and read
+	            // a copy of the object back in.
+	            ObjectInputStream in = new ObjectInputStream(
+	                new ByteArrayInputStream(bos.toByteArray()));
+	            obj = in.readObject();
+	        }
+	        catch(IOException e) {
+	            e.printStackTrace();
+	        }
+	        catch(ClassNotFoundException cnfe) {
+	            cnfe.printStackTrace();
+	        }
+	        return obj;
+	    }
+	  
+	  
+		}
+
 
 
 //System.out.println(cornersCurr[0][0]);

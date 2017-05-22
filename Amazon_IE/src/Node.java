@@ -20,7 +20,8 @@ public class Node {
 		this.g = g;
 		this.setArr(arr);
 		this.currIndex = currIndex;
-		setPlacement(new int[arr.length][2]);//5 item run
+		setPlacement(new int[arr.length][5]);//5 item run
+
 	}
 	
 	private Item[] copyArr(Item[] arr2) {
@@ -34,7 +35,8 @@ public class Node {
 		this.currIndex = currIndex;
 		//this.Nodes = nodes;
 		this.parentNode = parent;
-		setPlacement(placementHold);//5 item run
+		placement = cloneArray(placementHold); 
+		//setPlacement(placementHold);//5 item run
 	}
 	
 	
@@ -71,7 +73,14 @@ public class Node {
 	}
 	
 	
-
+	public static int[][] cloneArray(int[][] src) {
+	    int length = src.length;
+	    int[][] target = new int[length][src[0].length];
+	    for (int i = 0; i < length; i++) {
+	        System.arraycopy(src[i], 0, target[i], 0, src[i].length);
+	    }
+	    return target;
+	}
 	
 	
 

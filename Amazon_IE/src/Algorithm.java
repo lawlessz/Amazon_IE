@@ -44,15 +44,6 @@ public class Algorithm {
 	
 	
 	public boolean checkPlace(Grid g, Item I, int orient, int x, int y) {
-		System.out.println(g.index);
-		System.out.println("THIS IS THE INDEX^");
-		System.out.println(I.numS);
-		System.out.println("This is the item number");
-		
-		
-		//System.out.println("hold1");
-		//System.out.println(Character.getNumericValue(I.numS.charAt(0))-1);
-		//System.out.println("hold2");
 		if(g.index != (Character.getNumericValue(I.numS.charAt(0))-1) ){  //dont place an item that shouldnt be placed
 			System.out.println("DFSJFFKSDFJFSIFDFSFD");
 			return false;
@@ -156,28 +147,35 @@ public class Algorithm {
     }
 	
 	//places item //need to rethink for [y][x]
-	public boolean placeItem(Grid g, Item I, int orient, int x, int y, Node n) {
+	public boolean placeItem(Grid g, Item I, int orient, int x, int y, Node n, int ind) {
 		g.index++;
-
-
+		int tempx = x;
+		int tempy = y;
+		I.placedy = y;
+		n.getArr()[ind].placedy = tempy;
+		n.getPlacement()[ind][1] = tempy;
 	    if (orient == 12) { // north then east but east first
 	        for (int i = x; i < x + I.xdim; i++) {
 	            for (int j = y; j > y - I.ydim; j--) {
 	            	g.table[j][i] = I.numS;
 	             }
 	         }
+	       tempy = y-I.ydim+1;
 	      } else if (orient == 14) { // north then west but west first
 	            for (int i = x; i > x - I.xdim; i--) {
 	                for (int j = y; j < y + I.ydim; j++) {
 	                	g.table[j][i] = I.numS;
-	                }
+	                }   
 	            }
+	            tempx = x-I.xdim+1;
+	            tempy = y-I.ydim+1;
 	      } else if (orient == 21) { // northeast east first
 		        for (int i = x; i < x + I.xdim; i++) {
 		            for (int j = y; j > y - I.ydim; j--) {
 		            	g.table[j][i] = I.numS;
 		             }
 		         }
+		        tempy = y-I.ydim+1;
 	      } else if (orient == 23) { // southeast east first
 	           for (int i = x; i < x + I.xdim; i++) {
 		           for (int j = y; j < y + I.ydim; j++) {
@@ -197,19 +195,28 @@ public class Algorithm {
 			        	g.table[j][i] = I.numS;
 			        }
 			    }
+		        tempx = x-I.xdim+1;
 		  } else if (orient == 41) { // west north
 		        for (int i = x; i > x - I.xdim; i--) {
 			        for (int j = y; j > y - I.ydim; j--) {
 			        	g.table[j][i] = I.numS;
 			        }
 			    }
+		        tempx = x-I.xdim+1;
+		        tempy = y-I.ydim+1;
 		  } else if (orient == 43) { // South then west but west first
 		        for (int i = x; i > x - I.xdim; i--) {
 			        for (int j = y; j < y + I.ydim; j++) {
 			        	g.table[j][i] = I.numS;
 			        }
 			    }
+		        tempx = x-I.xdim+1;
 		  }
+	    I.placedx = tempx;
+	    n.getArr()[ind].placedx = tempx;
+	    n.getArr()[ind].placedy = tempy;
+	    n.getPlacement()[ind][0] = tempx;
+	    n.getPlacement()[ind][1] = tempy;
 	    return true;
     }
 	
@@ -340,21 +347,8 @@ public class Algorithm {
 		   System.out.println(I.numS + "-THE ITEM");
 		   //printArray(g.table);
 		   for(int i = xloc; i < xloc+I.xdim; i++){
-			   /*
-			   System.out.println(i+"<i");
-			   System.out.println(yloc+"<yloc");
-			   System.out.println(yloc-h+"<yloc-h");
-			   System.out.println(xloc+"<xloc");
-			   System.out.println(I.xdim+ xloc);
-			   System.out.println(I.xdim+ "currx");
-			   System.out.println(I.ydim+ "curry");
-			   System.out.println(I.zdim+ "currz");
-			   System.out.println(I.xdim2+ "realx");
-			   System.out.println(I.ydim2+ "realy");
-			   System.out.println(I.zdim2+ "realz");
-			   */
 			   while(g.table[yloc-h][i] == "00"){
-				   System.out.println("went in");
+				   //System.out.println("went in");
 				   total++;
 				   h++;
 
@@ -363,12 +357,6 @@ public class Algorithm {
 			   //System.out.println(total + "<what is this1");
 		   }
 		   for(int j = xloc; j < xloc+I.xdim; j++){
-			  // System.out.println(j);
-			  // System.out.println(yloc);
-			  // System.out.println(yloc-h);
-			  // System.out.println(I.ydim);
-			  // System.out.println(yloc+I.ydim+h-1);
-			   
 			   while(g.table[yloc+I.ydim+h-1][j] == "00"){
 				   total++;
 				   h++;
@@ -404,7 +392,13 @@ public class Algorithm {
 		   //printArray(n.placement);
 		   int total = 0;
 		   for(int i = 0; i < n.getArr().length; i++){
-			   total += countWhitespace(n.g,n.getPlacement()[i][0],n.getPlacement()[i][1], n.getArr()[i]);
+	        	 n.getArr()[i].xdim = n.getPlacement()[i][2];
+	        	 n.getArr()[i].ydim = n.getPlacement()[i][3];
+	        	 n.getArr()[i].zdim = n.getPlacement()[i][4];
+	        	 System.out.println(n.getPlacement()[1][2] + "HEREE999999");
+			   total += countWhitespace(n.g, n.getPlacement()[i][0],n.getPlacement()[i][1], n.getArr()[i]);
+			   System.out.println(n.currIndex+"<<<<INDEX");
+			   //System.out.println(n.getPlacement()[2][1]);
 			   //System.out.println(total + "<TOTALPARTIAL");
 		   }
 		   return total;

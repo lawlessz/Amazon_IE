@@ -1,6 +1,6 @@
 //Item should process an item within the class and result with 
 //an item object that can be added to an order
-public class Item {
+public class Item implements java.io.Serializable {
 
 	public int orderNum;//to be determined later
 	String[] w_info = new String[10];
@@ -35,6 +35,10 @@ public class Item {
 		//this.placedx = placedx;
 		
 	}
+	public Item() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setX(int n){
 		this.xdim = n;
 	}
