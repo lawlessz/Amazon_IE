@@ -7,7 +7,10 @@ public class Order {
 	
 	private int x;
 
-
+	int AmazonVol;
+	int foundVol;
+	
+	int testVol;
 	
 
 	

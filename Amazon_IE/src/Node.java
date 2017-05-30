@@ -6,6 +6,7 @@ import java.util.List;
 public class Node {
 
 	Grid g;
+	Grid gradient;
 	private Item[] arr;
 	private int[][] placement;
 	int currIndex = 0;
@@ -13,14 +14,22 @@ public class Node {
 	boolean isComplete;
 	Node parentNode;
 	
+	
 	int whitespace;
+	int AmazonBoxVolumeCM3;
+	int smallestVolume;
+	
+	int closex;
+	int closey;
+	int closez;
 	
 	//root node constructor
-	public Node(Grid g, Item[] arr, int currIndex){
-		this.g = g;
+	public Node(Grid gx, Item[] arr, int currIndex){
+		this.g = gx;
+		this.gradient = gx;
 		this.setArr(arr);
 		this.currIndex = currIndex;
-		setPlacement(new int[arr.length][5]);//5 item run
+		setPlacement(new int[arr.length][7]);//second to last spot for whitespace bool // last spot for is stacked
 
 	}
 	
@@ -29,8 +38,9 @@ public class Node {
 		return null;
 	}
 
-	public Node(Grid g, Item[] arr, int currIndex, Node parent, int[][] placementHold){
+	public Node(Grid g, Item[] arr, int currIndex, Node parent, int[][] placementHold, Grid gradient){
 		this.g = g;
+		this.gradient = gradient;
 		this.setArr(arr);
 		this.currIndex = currIndex;
 		//this.Nodes = nodes;
@@ -41,6 +51,7 @@ public class Node {
 	
 	
 	public String toString(){
+		
 		printGrid(g.table);
 	    return Integer.toString(whitespace);
 	}

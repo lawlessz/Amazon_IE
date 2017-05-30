@@ -42,17 +42,27 @@ public class Algorithm {
 		return true;
 	}
 	
+	//TO IMPLEMENT
+	public int pullZ(int x, int y, Item[] arr) {
+		int ztot = 0;
+		
+		return ztot;
+	}
 	
-	public boolean checkPlace(Grid g, Item I, int orient, int x, int y) {
+	public boolean checkPlace(Grid g, Item I, int orient, int x, int y, Item[] arr) {
 		if(g.index != (Character.getNumericValue(I.numS.charAt(0))-1) ){  //dont place an item that shouldnt be placed
-			System.out.println("DFSJFFKSDFJFSIFDFSFD");
+			//System.out.println("DFSJFFKSDFJFSIFDFSFD");
 			return false;
 		}
+		if (I.zdim > g.zdimen) {
+			return false;
+		}
+
 	    if (orient == 12) { // north then east but east first
 	        for (int i = x; i < x + I.xdim; i++) {
-	        	System.out.println(y);
-	        	System.out.println(I.ydim);
-	        	System.out.println(y-I.ydim);
+	        	//System.out.println(y);
+	        	//System.out.println(I.ydim);
+	        	//System.out.println(y-I.ydim);
 	        	if(y-I.ydim < 0){
 	        		return false;
 	        		
@@ -88,8 +98,8 @@ public class Algorithm {
 		             }
 		         }
 	      } else if (orient == 23) { // southeast east first
-	    	  System.out.println(x + " " + y + "x y" + I.xdim + " " + I.ydim );
-	    	  System.out.println();
+	    	 // System.out.println(x + " " + y + "x y" + I.xdim + " " + I.ydim );
+	    	 // System.out.println();
 
 	           for (int i = x; i < x + I.xdim; i++) {
 		           for (int j = y; j < y + I.ydim; j++) {
@@ -146,8 +156,124 @@ public class Algorithm {
 	    return true;
     }
 	
+	
+	
+	public boolean checkStackPlace(Grid g, Item I, int orient, int x, int y, Item[] arr, Node n) {
+		//System.out.println(g.xdimen);
+		//System.out.println(g.ydimen);
+		String s = g.table[y][x];
+		if(g.index != (Character.getNumericValue(I.numS.charAt(0))-1) ){  //dont place an item that shouldnt be placed
+			//System.out.println("DFSJFFKSDFJFSIFDFSFD");
+			return false;
+		}
+		if (I.zdim > g.zdimen) {
+			return false;
+		}
+		if (I.zdim + n.gradient.gtable[y][x] > g.zdimen) {
+			return false;
+		}
+	    if (orient == 12) { // north then east but east first
+	        for (int i = x; i < x + I.xdim; i++) {
+
+	        	if(y-I.ydim < 0){
+	        		return false;
+	        		
+	        	}
+	            for (int j = y; j > y - I.ydim; j--) {
+	                if(g.table[j][i] != s) {
+	                	return false;
+	                }
+	             }
+	         }
+	      } else if (orient == 14) { // north then west but west first
+	        	if(x-I.xdim < 0){
+	        		return false;
+	        		
+	        	}
+	            for (int i = x; i > x - I.xdim; i--) {
+	                for (int j = y; j < y + I.ydim; j++) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+	                }
+	            }
+	      } else if (orient == 21) { // northeast east first
+		        for (int i = x; i < x + I.xdim; i++) {
+		        	if(y-I.ydim < 0){
+		        		return false;
+		        		
+		        	}
+		            for (int j = y; j > y - I.ydim; j--) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+		             }
+		         }
+	      } else if (orient == 23) { // southeast east first
+	    	 // System.out.println(x + " " + y + "x y" + I.xdim + " " + I.ydim );
+	    	 // System.out.println();
+
+	           for (int i = x; i < x + I.xdim; i++) {
+		           for (int j = y; j < y + I.ydim; j++) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+		              }
+		       }
+		  } else if (orient == 32) { // south east
+		        for (int i = x; i < x + I.xdim; i++) {
+			        for (int j = y; j < y + I.ydim; j++) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+			        }
+			    }
+		  } else if (orient == 34) { // south west
+	        	if(x-I.xdim < 0){
+	        		return false;
+	        		
+	        	}
+		        for (int i = x; i > x - I.xdim; i--) {
+			        for (int j = y; j < y + I.ydim; j++) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+			        }
+			    }
+		  } else if (orient == 41) { // west north
+	        	if(x-I.xdim < 0 || y-I.ydim < 0){
+	        		return false;
+	        		
+	        	}
+		        for (int i = x; i > x - I.xdim; i--) {
+			        for (int j = y; j > y - I.ydim; j--) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+			        }
+			    }
+		  } else if (orient == 43) { // South then west but west first
+	        	if(x-I.xdim < 0){
+	        		return false;
+	        		
+	        	}
+		        for (int i = x; i > x - I.xdim; i--) {
+			        for (int j = y; j < y + I.ydim; j++) {
+		                if(g.table[j][i] != s) {
+		                	return false;
+		                }
+			        }
+			    }
+		  }
+	    return true;
+    }
+	
+	
+	
+	
 	//places item //need to rethink for [y][x]
 	public boolean placeItem(Grid g, Item I, int orient, int x, int y, Node n, int ind) {
+
 		g.index++;
 		int tempx = x;
 		int tempy = y;
@@ -158,6 +284,7 @@ public class Algorithm {
 	        for (int i = x; i < x + I.xdim; i++) {
 	            for (int j = y; j > y - I.ydim; j--) {
 	            	g.table[j][i] = I.numS;
+	            	n.gradient.gtable[j][i] += I.zdim;
 	             }
 	         }
 	       tempy = y-I.ydim+1;
@@ -165,6 +292,7 @@ public class Algorithm {
 	            for (int i = x; i > x - I.xdim; i--) {
 	                for (int j = y; j < y + I.ydim; j++) {
 	                	g.table[j][i] = I.numS;
+	                	n.gradient.gtable[j][i] += I.zdim;
 	                }   
 	            }
 	            tempx = x-I.xdim+1;
@@ -173,6 +301,7 @@ public class Algorithm {
 		        for (int i = x; i < x + I.xdim; i++) {
 		            for (int j = y; j > y - I.ydim; j--) {
 		            	g.table[j][i] = I.numS;
+		            	n.gradient.gtable[j][i] += I.zdim;
 		             }
 		         }
 		        tempy = y-I.ydim+1;
@@ -180,19 +309,23 @@ public class Algorithm {
 	           for (int i = x; i < x + I.xdim; i++) {
 		           for (int j = y; j < y + I.ydim; j++) {
 		        	   g.table[j][i] = I.numS;
+		        	   n.gradient.gtable[j][i] += I.zdim;
 		              }
 		       }
 		  } else if (orient == 32) { // south east
-			  System.out.println(x + "  "  + y);
+			  //System.out.println(x + "  "  + y);
 		        for (int i = x; i < x + I.xdim; i++) {
 			        for (int j = y; j < y + I.ydim; j++) {
 			        	g.table[j][i] = I.numS;
+			        	n.gradient.gtable[j][i] += I.zdim;
+
 			        }
 			    }
 		  } else if (orient == 34) { // south west
 		        for (int i = x; i > x - I.xdim; i--) {
 			        for (int j = y; j < y + I.ydim; j++) {
 			        	g.table[j][i] = I.numS;
+			        	n.gradient.gtable[j][i] += I.zdim;
 			        }
 			    }
 		        tempx = x-I.xdim+1;
@@ -200,6 +333,7 @@ public class Algorithm {
 		        for (int i = x; i > x - I.xdim; i--) {
 			        for (int j = y; j > y - I.ydim; j--) {
 			        	g.table[j][i] = I.numS;
+			        	n.gradient.gtable[j][i] += I.zdim;
 			        }
 			    }
 		        tempx = x-I.xdim+1;
@@ -208,6 +342,7 @@ public class Algorithm {
 		        for (int i = x; i > x - I.xdim; i--) {
 			        for (int j = y; j < y + I.ydim; j++) {
 			        	g.table[j][i] = I.numS;
+			        	n.gradient.gtable[j][i] += I.zdim;
 			        }
 			    }
 		        tempx = x-I.xdim+1;
@@ -223,65 +358,16 @@ public class Algorithm {
 	
 	
 	
+   
 	
 	
-    public void placeItem2(String[][] mat, Item I, int orient, int y, int x) {
-    	//System.out.println("placing");
-    	//System.out.println(orient);
-	    if (orient == 12) { // north then east but east first
-	        for (int i = x; i < x + I.xdim; i++) {
-	            for (int j = y; j < y + I.ydim; j++) {
-	                mat[j][i] = I.numS;
-	             }
-	         }
-	      } else if (orient == 14) { // north then west but west first
-	            for (int i = x; i < x - I.xdim; i++) {
-	                for (int j = y; j < y + I.ydim; j++) {
-	                    mat[j][i] = I.numS;
-	                }
-	            }
-	      } else if (orient == 21) { // northeast east first
-	           for (int i = x; i < x + I.xdim; i++) {
-	               for (int j = y; j < y + I.ydim; j++) {
-	                  mat[j][i] = I.numS;
-	              }
-	           }
-	      } else if (orient == 23) { // southeast but west first
-	           for (int i = x; i < x + I.xdim; i++) {
-		           for (int j = y; j < y - I.ydim; j++) {
-		               mat[j][i] = I.numS;
-		              }
-		       }
-		  } else if (orient == 32) { // south east
-		        for (int i = x; i < x + I.xdim; i++) {
-			        for (int j = y; j < y - I.ydim; j++) {
-			            mat[j][i] = I.numS;
-			        }
-			    }
-		  } else if (orient == 34) { // south west
-			  System.out.println("placing123");
-			  System.out.println(x + "  <- that is x");
-			  System.out.println(y + "  <- that is y");
-		        for (int i = x; i < x - I.xdim; i++) {
-			        for (int j = y; j < y - I.ydim; j++) {
-			        	System.out.println("placing");
-			            mat[j][i] = I.numS;
-			        }
-			    }
-		  } else if (orient == 41) { // west north
-		        for (int i = x; i < x - I.xdim; i++) {
-			        for (int j = y; j < y + I.ydim; j++) {
-			            mat[j][i] = I.numS;
-			        }
-			    }
-		  } else if (orient == 43) { // north then west but west first
-		        for (int i = x; i < x - I.xdim; i++) {
-			        for (int j = y; j < y - I.ydim; j++) {
-			            mat[j][i] = I.numS;
-			        }
-			    }
-		  }
-    }
+	
+	
+	
+	
+	
+	
+	
    
 	//update if the item will fit place it
 	public static void sweep(int x, int y, int i, int j, Grid g){
@@ -328,15 +414,111 @@ public class Algorithm {
 	            }
 	         }
 	      }
-	      System.out.println("Number of Corners: " + cornerdata[0][0]);
-	      for (int i = 1; i <= cornerdata[0][0]; i++) {
-	         System.out.print("Corner " + i + ": [" + cornerdata[i][0] + "][" + cornerdata[i][1] + "]");
-	         System.out.println("   Possible Item Orientations: " + cornerdata[i][2] + ", " + cornerdata[i][3]);
-	      }
-	      System.out.println();
+	     // System.out.println("Number of Corners: " + cornerdata[0][0]);
+	     // for (int i = 1; i <= cornerdata[0][0]; i++) {
+	     //    System.out.print("Corner " + i + ": [" + cornerdata[i][0] + "][" + cornerdata[i][1] + "]");
+	     //    System.out.println("   Possible Item Orientations: " + cornerdata[i][2] + ", " + cornerdata[i][3]);
+	     // }
+	     // System.out.println();
 	      return cornerdata;
 	   }
 	   
+	   //scrape the smallest dimensions from a node
+	   //need to keep in mind a check to make sure all items are contained at end of method
+	   public static void smallestVolume(Node n) {
+		  // int closey = n.g.xdimen-2;
+		  // int closex = n.g.ydimen-2;
+		   int closez = 0;
+		   int closeyf = 0;
+		   int closexf = 0;
+		   //int closezf = n.g.zdimen;
+		  // System.out.println(n.g.xdimen + "<xdim");
+		  // System.out.println(n.g.ydimen + "<ydim");
+
+		   //System.out.println(n.g.zdimen + "<zdim");
+		   //System.out.println(n.g.table.length);
+		   /*
+		   for(int i = 1; i < n.g.ydimen-1; i++) {
+			   //System.out.println(i + "<i");
+			   for(int j = 1; j < n.g.xdimen-1; j++) {
+				   //System.out.println(i + "<i");
+				   //System.out.println(j + "<j");
+				   if(n.g.table[i][j] == "00"){
+					   if(j == n.g.xdimen-2) {
+						   closey = i;
+						   closeyf = i;
+						   closeyf--;
+						   j = n.g.xdimen;
+						   i = n.g.ydimen;
+						   break;
+					   }
+				   } else {
+					   //closey = n.g.xdimen-2;
+					   
+					   j = n.g.xdimen;
+					   i++;
+					   break;
+				   }
+			   }
+		   }
+		   for(int i = 1; i < n.g.xdimen-1; i++) {
+			   //System.out.println(i + "<i");
+			   for(int j = 1; j < n.g.ydimen-1; j++) {
+				   //System.out.println(i + "<i");
+				   //System.out.println(j + "<j");
+				   if(n.g.table[j][i] == "00"){
+					  // System.out.println(closex + "THIS IS IT");
+					   if(j == n.g.ydimen-2) {
+						   closex = i;
+						   closexf = i;
+						   closexf--;
+						   j = n.g.ydimen;
+						   i = n.g.xdimen;
+						   //System.out.println(closex + "THIS IS IT");
+						   break;
+					   }
+				   } else {
+					   //closex = n.g.ydimen-2;
+					   closexf = n.g.xdimen-2;
+					   j = n.g.ydimen;
+					   i++;
+					   //break;
+				   }
+			   }
+		   }
+		   */
+		   for(int i = 1; i < n.g.xdimen-1; i++) {
+			   for(int j = 1; j < n.g.ydimen-1; j++) {
+				   if(n.gradient.gtable[j][i] > closez){
+					   closez =  n.gradient.gtable[j][i];
+				   }
+			   }
+		   }
+		  // System.out.println(closex + " < closex");
+		  // System.out.println(closey + " < closey");
+		  
+		   
+		   for(int i = 0; i < n.getArr().length; i ++){
+			   if(n.getPlacement()[i][0] + n.getPlacement()[i][2]> closexf){
+				   closexf = n.getPlacement()[i][0] + n.getPlacement()[i][2];
+			   }
+			   if(n.getPlacement()[i][1] + n.getPlacement()[i][3] > closeyf){
+				   closeyf = n.getPlacement()[i][1] + n.getPlacement()[i][3];
+			   }
+		   }
+		   
+		   //closexf--;
+		   //System.out.println(closexf + " < closexf");
+		   //System.out.println(closeyf + " < closeyf");
+		   //System.out.println(closez + " < closez");
+		   closexf--;
+		   closeyf--;
+		   n.closex = closexf;
+		   n.closey = closeyf;
+		   n.closez = closez;
+		   n.smallestVolume = (closexf)*(closeyf)*(closez);
+		
+	   }
 	   //returns int of all whitespace cubits to borders
 	   //update all backwards from the xy-yx thing but works
 	   //needs to be tested further
@@ -344,7 +526,7 @@ public class Algorithm {
 		   int total = 0;
 		   int h = 1;
 		   //System.out.println(I.xdim);
-		   System.out.println(I.numS + "-THE ITEM");
+		   //System.out.println(I.numS + "-THE ITEM");
 		   //printArray(g.table);
 		   for(int i = xloc; i < xloc+I.xdim; i++){
 			   while(g.table[yloc-h][i] == "00"){
@@ -395,9 +577,11 @@ public class Algorithm {
 	        	 n.getArr()[i].xdim = n.getPlacement()[i][2];
 	        	 n.getArr()[i].ydim = n.getPlacement()[i][3];
 	        	 n.getArr()[i].zdim = n.getPlacement()[i][4];
-	        	 System.out.println(n.getPlacement()[1][2] + "HEREE999999");
+	        	 //System.out.println(n.getPlacement()[1][2] + "HEREE999999");
+	        if(n.getPlacement()[i][5] == 1) {
 			   total += countWhitespace(n.g, n.getPlacement()[i][0],n.getPlacement()[i][1], n.getArr()[i]);
-			   System.out.println(n.currIndex+"<<<<INDEX");
+	        }
+			   //System.out.println(n.currIndex+"<<<<INDEX");
 			   //System.out.println(n.getPlacement()[2][1]);
 			   //System.out.println(total + "<TOTALPARTIAL");
 		   }
