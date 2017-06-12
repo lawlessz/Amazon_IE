@@ -1,3 +1,12 @@
+/*
+ * Developed By Zach Lawless for Amazon capstone project UW 2017
+ * Will produce possible boxes and packaging locations for a range of Amazon Boxes.
+ * 
+ * 
+ * Contact z.law@comcast.net for questions, I can modify and clarify things swiftly
+ * 
+ */
+
 //several parts to a whole, brute force and basic/(not clever) attempts
 //
 public class Algorithm {
@@ -18,38 +27,15 @@ public class Algorithm {
 			}
 		}
 	}
-	
-	//todelete?
-	public static void space_Item(int coordX, int coordY, Grid g, Item rect){
-		boolean t = true;
-		int count = 0;
-		while (t == true){
-
-		}
-	}
-	
-	//return true if item fits in grid (OUTDATED? need to figure out structure)
-	public static boolean place(int x, int y, Grid g, Item rect){
-		for (int i = x; i<rect.xdim; i++) {
-			for (int j = y; j<rect.ydim; j++) {
-				if(g.table[i][j] == "00"){
-				} else {
-					return false;
-				}
-			}
-		}
-		
-		return true;
-	}
-	
-	//TO IMPLEMENT
-	public int pullZ(int x, int y, Item[] arr) {
-		int ztot = 0;
-		
-		return ztot;
-	}
-	
+	//ATTN
+	//This is where you could add rules based on info that you have created in the Item object or elsewhere
+	//Also you would have to modify check stack place
+	//
+	//returns true if the item can be placed in that spot a well as makes sure the zdim is not illegal
+	//8 combinations to place but it is really 4 with duplicates. N = 1, E = 2, S = 3, W = 4
 	public boolean checkPlace(Grid g, Item I, int orient, int x, int y, Item[] arr) {
+		//System.out.println(arr[0].xdim + "FROM CHECK PLACE X -node");
+		//System.out.println(I.xdim + "FROM CHECK PLACE X - item object");
 		if(g.index != (Character.getNumericValue(I.numS.charAt(0))-1) ){  //dont place an item that shouldnt be placed
 			//System.out.println("DFSJFFKSDFJFSIFDFSFD");
 			return false;
@@ -157,7 +143,9 @@ public class Algorithm {
     }
 	
 	
-	
+	//Returns true if the item can be placed with stacking, basically the same as checkPlace but
+	//we look at the z table to make sure we dont illegaly place.
+	//Possible bug with something to do with not incrementing Z, I need to investigate
 	public boolean checkStackPlace(Grid g, Item I, int orient, int x, int y, Item[] arr, Node n) {
 		//System.out.println(g.xdimen);
 		//System.out.println(g.ydimen);
@@ -223,7 +211,7 @@ public class Algorithm {
 		  } else if (orient == 32) { // south east
 		        for (int i = x; i < x + I.xdim; i++) {
 			        for (int j = y; j < y + I.ydim; j++) {
-		                if(g.table[j][i] != s) {
+		                if(g.table[j][i] != s || g.table[j][i] == "-1") {
 		                	return false;
 		                }
 			        }
@@ -264,16 +252,32 @@ public class Algorithm {
 		                }
 			        }
 			    }
-		  }
+		  } 
+	    //else if (orient == 343){ //attempt at starting new branch //TO DELETE OUTDATED
+		       // for (int i = x; i < x + I.xdim; i++) {
+			      //  for (int j = y; j < y + I.ydim; j++) {
+		            //    if(g.table[j][i] != s) {
+		             //   	return false;
+		              //  }
+			      //  }
+			   // }
+		  //}
+	    
 	    return true;
     }
 	
 	
 	
 	
-	//places item //need to rethink for [y][x]
+	//places item
+	//
 	public boolean placeItem(Grid g, Item I, int orient, int x, int y, Node n, int ind) {
-
+		//if(ind == 1) {
+		//System.out.println(n.getArr()[1].zdim + "zRUN");
+		//System.out.println(I.zdim + " change?");
+		//}
+		//System.out.println(n.getArr()[0].xdim + " <WHAT IS X? -from node"); //debugging tool
+		//System.out.println(I.xdim + " <WHAT IS X?"); //debugging tool
 		g.index++;
 		int tempx = x;
 		int tempy = y;
@@ -348,34 +352,18 @@ public class Algorithm {
 		        tempx = x-I.xdim+1;
 		  }
 	    I.placedx = tempx;
+	    I.placedz = n.gradient.gtable[y][x];
 	    n.getArr()[ind].placedx = tempx;
 	    n.getArr()[ind].placedy = tempy;
+	    n.getArr()[ind].placedz = I.placedz;
 	    n.getPlacement()[ind][0] = tempx;
 	    n.getPlacement()[ind][1] = tempy;
+	    n.getPlacement()[ind][8] = I.placedz;
 	    return true;
     }
 	
 	
-	
-	
-   
-	
-	
-	
-	
-	
-	
-	
-	
-	
-   
-	//update if the item will fit place it
-	public static void sweep(int x, int y, int i, int j, Grid g){
-		
-	}
-
-	
-	// (Matt) - finds the corners of the space remaining in the box
+	// (Matt's implementation it probably isnt the best way memory/speed wise) - finds the corners of the space remaining in the box and return in array
 	   public int[][] findCorners(String matrix[][]) {
 	      int[][] cornerdata = new int[20][4];
 	      cornerdata[0][0] = 0; // counts number of corners found
@@ -414,79 +402,15 @@ public class Algorithm {
 	            }
 	         }
 	      }
-	     // System.out.println("Number of Corners: " + cornerdata[0][0]);
-	     // for (int i = 1; i <= cornerdata[0][0]; i++) {
-	     //    System.out.print("Corner " + i + ": [" + cornerdata[i][0] + "][" + cornerdata[i][1] + "]");
-	     //    System.out.println("   Possible Item Orientations: " + cornerdata[i][2] + ", " + cornerdata[i][3]);
-	     // }
-	     // System.out.println();
 	      return cornerdata;
 	   }
 	   
 	   //scrape the smallest dimensions from a node
 	   //need to keep in mind a check to make sure all items are contained at end of method
 	   public static void smallestVolume(Node n) {
-		  // int closey = n.g.xdimen-2;
-		  // int closex = n.g.ydimen-2;
 		   int closez = 0;
 		   int closeyf = 0;
 		   int closexf = 0;
-		   //int closezf = n.g.zdimen;
-		  // System.out.println(n.g.xdimen + "<xdim");
-		  // System.out.println(n.g.ydimen + "<ydim");
-
-		   //System.out.println(n.g.zdimen + "<zdim");
-		   //System.out.println(n.g.table.length);
-		   /*
-		   for(int i = 1; i < n.g.ydimen-1; i++) {
-			   //System.out.println(i + "<i");
-			   for(int j = 1; j < n.g.xdimen-1; j++) {
-				   //System.out.println(i + "<i");
-				   //System.out.println(j + "<j");
-				   if(n.g.table[i][j] == "00"){
-					   if(j == n.g.xdimen-2) {
-						   closey = i;
-						   closeyf = i;
-						   closeyf--;
-						   j = n.g.xdimen;
-						   i = n.g.ydimen;
-						   break;
-					   }
-				   } else {
-					   //closey = n.g.xdimen-2;
-					   
-					   j = n.g.xdimen;
-					   i++;
-					   break;
-				   }
-			   }
-		   }
-		   for(int i = 1; i < n.g.xdimen-1; i++) {
-			   //System.out.println(i + "<i");
-			   for(int j = 1; j < n.g.ydimen-1; j++) {
-				   //System.out.println(i + "<i");
-				   //System.out.println(j + "<j");
-				   if(n.g.table[j][i] == "00"){
-					  // System.out.println(closex + "THIS IS IT");
-					   if(j == n.g.ydimen-2) {
-						   closex = i;
-						   closexf = i;
-						   closexf--;
-						   j = n.g.ydimen;
-						   i = n.g.xdimen;
-						   //System.out.println(closex + "THIS IS IT");
-						   break;
-					   }
-				   } else {
-					   //closex = n.g.ydimen-2;
-					   closexf = n.g.xdimen-2;
-					   j = n.g.ydimen;
-					   i++;
-					   //break;
-				   }
-			   }
-		   }
-		   */
 		   for(int i = 1; i < n.g.xdimen-1; i++) {
 			   for(int j = 1; j < n.g.ydimen-1; j++) {
 				   if(n.gradient.gtable[j][i] > closez){
@@ -494,10 +418,7 @@ public class Algorithm {
 				   }
 			   }
 		   }
-		  // System.out.println(closex + " < closex");
-		  // System.out.println(closey + " < closey");
-		  
-		   
+		   //After a while we see that we already have all we need to make this method - pretty simple just access array
 		   for(int i = 0; i < n.getArr().length; i ++){
 			   if(n.getPlacement()[i][0] + n.getPlacement()[i][2]> closexf){
 				   closexf = n.getPlacement()[i][0] + n.getPlacement()[i][2];
@@ -507,10 +428,6 @@ public class Algorithm {
 			   }
 		   }
 		   
-		   //closexf--;
-		   //System.out.println(closexf + " < closexf");
-		   //System.out.println(closeyf + " < closeyf");
-		   //System.out.println(closez + " < closez");
 		   closexf--;
 		   closeyf--;
 		   n.closex = closexf;

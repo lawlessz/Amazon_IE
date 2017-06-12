@@ -1,0 +1,655 @@
+1.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.5,    y = -3.25,  z = 1.5             Orientation: x = 5.0,  y = 5.0,  z = 1.5
+Item 2 Location: x = 4.75,   y = -0.375, z = 2.0             Orientation: x = 9.4,  y = 0.75, z = 2.0
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 41.903%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 9.5, 6.5, 2.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 123.5 in3
+Execution Time: 0.352 seconds
+-----------------------------------------------------------------------------------------------------------
+
+2.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.625,  y = -1.625, z = 1.0             Orientation: x = 9.1,  y = 3.2,  z = 0.8
+Item 2 Location: x = 4.625,  y = -4.875, z = 1.25            Orientation: x = 9.2,  y = 3.1,  z = 1.2
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 54.77%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 9.5, 6.5, 2.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 123.5 in3
+Execution Time: 0.141 seconds
+-----------------------------------------------------------------------------------------------------------
+
+3.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 7.75,   y = -2.25,  z = 2.0             Orientation: x = 3.9,  y = 4.4,  z = 2.0
+Item 2 Location: x = 2.875,  y = -2.875, z = 1.75            Orientation: x = 5.59, y = 5.67, z = 1.65
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 67.042%
+Box Used: 10.0, 7.0, 2.0		Box Recommended: 9.5, 6.5, 2.0    Volume +/- From Recommended Box: 16.5
+Box Used Volume: 140.0 in3
+Execution Time: 0.312 seconds
+-----------------------------------------------------------------------------------------------------------
+
+4.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.75,   y = -2.0,   z = 1.25            Orientation: x = 9.5,  y = 4.0,  z = 1.2
+Item 2 Location: x = 2.75,   y = -6.375, z = 1.0             Orientation: x = 5.4,  y = 4.7,  z = 0.8
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 34.086%
+Box Used: 12.0, 9.0, 2.0		Box Recommended: 9.5, 6.5, 2.0    Volume +/- From Recommended Box: 92.5
+Box Used Volume: 216.0 in3
+Execution Time: 0.626 seconds
+-----------------------------------------------------------------------------------------------------------
+
+5.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.5,    y = -2.5,   z = 0.75            Orientation: x = 9.0,  y = 4.8,  z = 0.7
+Item 2 Location: x = 3.375,  y = -1.875, z = 1.25            Orientation: x = 6.6,  y = 3.7,  z = 0.5
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 37.576%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.051 seconds
+-----------------------------------------------------------------------------------------------------------
+
+6.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.75,   y = -3.5,   z = 0.5             Orientation: x = 5.5,  y = 7.0,  z = 0.3
+Item 2 Location: x = 2.125,  y = -3.125, z = 2.0             Orientation: x = 4.17, y = 6.14, z = 1.34
+Item 3 Location: x = 7.75,   y = -2.75,  z = 2.25            Orientation: x = 4.4,  y = 5.5,  z = 2.1
+
+Placement Order: Item 1, Item 3, Item 2
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 54.658%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.816 seconds
+-----------------------------------------------------------------------------------------------------------
+
+7.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.25,   y = -2.5,   z = 2.25            Orientation: x = 3.0,  y = 5.0,  z = 2.2
+Item 2 Location: x = 0.875,  y = -2.625, z = 1.0             Orientation: x = 1.7,  y = 5.25, z = 0.9
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 20.446%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.537 seconds
+-----------------------------------------------------------------------------------------------------------
+
+8.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.875,  y = -1.75,  z = 1.75            Orientation: x = 7.6,  y = 3.4,  z = 1.6
+Item 2 Location: x = 2.125,  y = -5.0,   z = 3.0             Orientation: x = 4.1,  y = 3.0,  z = 2.9
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 40.818%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.276 seconds
+-----------------------------------------------------------------------------------------------------------
+
+9.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.625,  y = -1.0,   z = 2.0             Orientation: x = 7.2,  y = 2.0,  z = 2.0
+Item 2 Location: x = 8.5,    y = -1.25,  z = 2.25            Orientation: x = 2.3,  y = 2.4,  z = 2.2
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 20.506%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.643 seconds
+-----------------------------------------------------------------------------------------------------------
+
+10.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.625,  y = -3.375, z = 1.25            Orientation: x = 9.13, y = 6.57, z = 1.11
+Item 2 Location: x = 4.5,    y = -3.125, z = 3.0             Orientation: x = 8.82, y = 6.04, z = 1.57
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 84.04%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.35 seconds
+-----------------------------------------------------------------------------------------------------------
+
+11.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.125,  y = -1.125, z = 1.5             Orientation: x = 1.7,  y = 2.2,  z = 1.5
+Item 2 Location: x = 1.125,  y = -2.0,   z = 2.25            Orientation: x = 2.1,  y = 3.8,  z = 2.1
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 12.455%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.786 seconds
+-----------------------------------------------------------------------------------------------------------
+
+12.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.0,    y = -3.25,  z = 3.25            Orientation: x = 3.8,  y = 6.3,  z = 0.8
+Item 2 Location: x = 2.625,  y = -3.25,  z = 2.25            Orientation: x = 5.2,  y = 6.4,  z = 2.2
+Item 3 Location: x = 7.625,  y = -3.0,   z = 2.0             Orientation: x = 4.53, y = 5.98, z = 1.97
+
+Placement Order: Item 2, Item 3, Item 1
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 45.652%
+Box Used: 10.0, 7.0, 5.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 140.0
+Box Used Volume: 350.0 in3
+Execution Time: 2.829 seconds
+-----------------------------------------------------------------------------------------------------------
+
+13.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.5,    y = -2.5,   z = 2.25            Orientation: x = 3.0,  y = 5.0,  z = 2.2
+Item 2 Location: x = 1.5,    y = -2.625, z = 0.5             Orientation: x = 2.9,  y = 5.2,  z = 0.5
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 19.821%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.42 seconds
+-----------------------------------------------------------------------------------------------------------
+
+14.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.375,  y = -1.625, z = 0.25            Orientation: x = 6.7,  y = 3.1,  z = 0.2
+Item 2 Location: x = 3.375,  y = -4.875, z = 0.25            Orientation: x = 6.7,  y = 3.1,  z = 0.2
+Item 3 Location: x = 8.0,    y = -2.5,   z = 0.5             Orientation: x = 2.5,  y = 4.8,  z = 0.4
+
+Placement Order: Item 1, Item 2, Item 3
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 13.942%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.402 seconds
+-----------------------------------------------------------------------------------------------------------
+
+15.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.125,  y = -3.125, z = 0.75            Orientation: x = 4.21, y = 6.1,  z = 0.71
+Item 2 Location: x = 6.375,  y = -3.125, z = 0.75            Orientation: x = 4.21, y = 6.1,  z = 0.71
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 32.262%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.156 seconds
+-----------------------------------------------------------------------------------------------------------
+
+16.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.875,  y = -1.625, z = 2.75            Orientation: x = 9.53, y = 3.15, z = 2.52
+Item 2 Location: x = 4.875,  y = -4.875, z = 2.75            Orientation: x = 9.53, y = 3.15, z = 2.52
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 82.991%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.128 seconds
+-----------------------------------------------------------------------------------------------------------
+
+17.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.25,   y = -2.625, z = 2.75            Orientation: x = 4.5,  y = 5.1,  z = 2.7
+Item 2 Location: x = 6.625,  y = -2.625, z = 1.25            Orientation: x = 4.2,  y = 5.2,  z = 1.1
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 44.219%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.303 seconds
+-----------------------------------------------------------------------------------------------------------
+
+18.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.25,   y = -5.625, z = 2.0             Orientation: x = 4.4,  y = 2.2,  z = 1.9
+Item 2 Location: x = 4.25,   y = -1.125, z = 2.0             Orientation: x = 8.4,  y = 2.2,  z = 2.0
+Item 3 Location: x = 4.25,   y = -3.375, z = 2.0             Orientation: x = 8.4,  y = 2.2,  z = 2.0
+
+Placement Order: Item 2, Item 3, Item 1
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 69.107%
+Box Used: 10.0, 7.0, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -70.0
+Box Used Volume: 140.0 in3
+Execution Time: 0.357 seconds
+-----------------------------------------------------------------------------------------------------------
+
+19.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.75,   y = -2.75,  z = 0.75            Orientation: x = 7.5,  y = 5.3,  z = 0.6
+Item 2 Location: x = 3.75,   y = -2.75,  z = 1.5             Orientation: x = 7.5,  y = 5.3,  z = 0.6
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 50.101%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.055 seconds
+-----------------------------------------------------------------------------------------------------------
+
+20.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.625,  y = -1.625, z = 1.75            Orientation: x = 9.1,  y = 3.1,  z = 1.6
+Item 2 Location: x = 4.625,  y = -4.875, z = 1.75            Orientation: x = 9.1,  y = 3.1,  z = 1.6
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 85.197%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.055 seconds
+-----------------------------------------------------------------------------------------------------------
+
+21.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.75,   y = -3.5,   z = 2.75            Orientation: x = 3.5,  y = 7.0,  z = 0.3
+Item 2 Location: x = 5.25,   y = -3.5,   z = 2.75            Orientation: x = 3.5,  y = 7.0,  z = 0.3
+Item 3 Location: x = 2.0,    y = -3.5,   z = 2.25            Orientation: x = 4.0,  y = 7.0,  z = 2.25
+Item 4 Location: x = 6.0,    y = -3.5,   z = 2.25            Orientation: x = 4.0,  y = 7.0,  z = 2.25
+
+Placement Order: Item 3, Item 4, Item 1, Item 2
+
+Number of items in order: 4
+Number of items packed: 4
+Volume Utilization: 71.667%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 1.326 seconds
+-----------------------------------------------------------------------------------------------------------
+
+22.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 7.0,    y = -4.75,  z = 1.5             Orientation: x = 4.0,  y = 2.5,  z = 1.5
+Item 2 Location: x = 4.75,   y = -1.75,  z = 2.0             Orientation: x = 9.3,  y = 3.3,  z = 1.8
+Item 3 Location: x = 2.5,    y = -4.625, z = 1.0             Orientation: x = 4.88, y = 2.05, z = 0.94
+
+Placement Order: Item 2, Item 3, Item 1
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 75.101%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.22 seconds
+-----------------------------------------------------------------------------------------------------------
+
+23.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.75,   y = -2.5,   z = 3.0             Orientation: x = 9.4,  y = 4.9,  z = 2.9
+Item 2 Location: x = 9.625,  y = -3.0,   z = 3.0             Orientation: x = 0.2,  y = 5.8,  z = 2.8
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 70.0%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.279 seconds
+-----------------------------------------------------------------------------------------------------------
+
+24.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 6.5,    y = -1.875, z = 1.75            Orientation: x = 2.28, y = 3.7,  z = 1.57
+Item 2 Location: x = 1.375,  y = -2.875, z = 2.0             Orientation: x = 2.6,  y = 5.67, z = 1.97
+Item 3 Location: x = 4.0,    y = -2.375, z = 2.0             Orientation: x = 2.5,  y = 4.6,  z = 1.8
+
+Placement Order: Item 2, Item 3, Item 1
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 58.122%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.285 seconds
+-----------------------------------------------------------------------------------------------------------
+
+25.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.25,   y = -2.75,  z = 2.5             Orientation: x = 2.3,  y = 5.4,  z = 2.3
+Item 2 Location: x = 3.75,   y = -2.75,  z = 2.5             Orientation: x = 2.3,  y = 5.4,  z = 2.3
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 32.738%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.35 seconds
+-----------------------------------------------------------------------------------------------------------
+
+26.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.25,   y = -2.125, z = 1.25            Orientation: x = 8.5,  y = 4.25, z = 1.18
+Item 2 Location: x = 3.5,    y = -5.5,   z = 1.5             Orientation: x = 6.8,  y = 2.5,  z = 1.3
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 51.004%
+Box Used: 10.0, 7.0, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -70.0
+Box Used Volume: 140.0 in3
+Execution Time: 0.13 seconds
+-----------------------------------------------------------------------------------------------------------
+
+27.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.125,  y = -3.75,  z = 0.75            Orientation: x = 4.21, y = 7.48, z = 0.59
+Item 2 Location: x = 6.5,    y = -2.875, z = 1.5             Orientation: x = 4.3,  y = 5.6,  z = 1.4
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 29.036%
+Box Used: 12.0, 9.0, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 6.0
+Box Used Volume: 216.0 in3
+Execution Time: 0.469 seconds
+-----------------------------------------------------------------------------------------------------------
+
+28.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 2.625,  y = -6.0,   z = 2.0             Orientation: x = 5.1,  y = 0.9,  z = 1.8
+Item 2 Location: x = 4.0,    y = -2.75,  z = 1.0             Orientation: x = 8.0,  y = 5.5,  z = 1.0
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 44.13%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.131 seconds
+-----------------------------------------------------------------------------------------------------------
+
+29.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.75,   y = -2.75,  z = 2.75            Orientation: x = 7.4,  y = 5.3,  z = 0.6
+Item 2 Location: x = 3.75,   y = -3.5,   z = 2.0             Orientation: x = 7.5,  y = 6.8,  z = 2.0
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 64.732%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.154 seconds
+-----------------------------------------------------------------------------------------------------------
+
+30.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.625,  y = -2.25,  z = 3.0             Orientation: x = 3.1,  y = 4.5,  z = 2.8
+Item 2 Location: x = 4.875,  y = -2.25,  z = 3.0             Orientation: x = 3.1,  y = 4.5,  z = 2.8
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 41.786%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.159 seconds
+-----------------------------------------------------------------------------------------------------------
+
+31.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.75,   y = -2.75,  z = 2.5             Orientation: x = 7.4,  y = 5.3,  z = 1.1
+Item 2 Location: x = 4.625,  y = -3.375, z = 1.25            Orientation: x = 9.13, y = 6.57, z = 1.11
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 61.719%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.141 seconds
+-----------------------------------------------------------------------------------------------------------
+
+32.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.875,  y = -3.25,  z = 0.75            Orientation: x = 3.7,  y = 6.5,  z = 0.7
+Item 2 Location: x = 4.875,  y = -5.75,  z = 2.25            Orientation: x = 2.2,  y = 2.36, z = 2.05
+Item 3 Location: x = 6.875,  y = -2.25,  z = 0.5             Orientation: x = 6.2,  y = 4.4,  z = 0.5
+
+Placement Order: Item 1, Item 3, Item 2
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 21.429%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 1.621 seconds
+-----------------------------------------------------------------------------------------------------------
+
+33.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 5.125,  y = -1.75,  z = 2.25            Orientation: x = 10.1, y = 3.3,  z = 2.2
+Item 2 Location: x = 11.5,   y = -2.25,  z = 2.25            Orientation: x = 2.3,  y = 4.5,  z = 2.2
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 27.558%
+Box Used: 13.5, 9.5, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 174.75
+Box Used Volume: 384.75 in3
+Execution Time: 0.917 seconds
+-----------------------------------------------------------------------------------------------------------
+
+34.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 7.0,    y = -3.625, z = 0.5             Orientation: x = 5.9,  y = 7.2,  z = 0.5
+Item 2 Location: x = 2.0,    y = -4.125, z = 0.75            Orientation: x = 3.86, y = 8.07, z = 0.71
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 21.528%
+Box Used: 12.0, 9.0, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 6.0
+Box Used Volume: 216.0 in3
+Execution Time: 0.34 seconds
+-----------------------------------------------------------------------------------------------------------
+
+35.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.25,   y = -3.25,  z = 1.75            Orientation: x = 2.4,  y = 6.3,  z = 1.7
+Item 2 Location: x = 3.75,   y = -3.25,  z = 1.75            Orientation: x = 2.4,  y = 6.3,  z = 1.7
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 46.053%
+Box Used: 9.5, 6.5, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: -86.5
+Box Used Volume: 123.5 in3
+Execution Time: 0.115 seconds
+-----------------------------------------------------------------------------------------------------------
+
+36.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.625,  y = -5.0,   z = 2.5             Orientation: x = 7.2,  y = 4.0,  z = 2.5
+Item 2 Location: x = 4.375,  y = -1.5,   z = 1.0             Orientation: x = 8.6,  y = 2.9,  z = 0.8
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 47.024%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.172 seconds
+-----------------------------------------------------------------------------------------------------------
+
+37.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 6.25,   y = -3.5,   z = 0.75            Orientation: x = 4.8,  y = 6.8,  z = 0.6
+Item 2 Location: x = 1.875,  y = -4.0,   z = 0.75            Orientation: x = 3.7,  y = 7.8,  z = 0.55
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 22.569%
+Box Used: 12.0, 9.0, 2.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 6.0
+Box Used Volume: 216.0 in3
+Execution Time: 0.474 seconds
+-----------------------------------------------------------------------------------------------------------
+
+38.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.75,   y = -2.5,   z = 2.75            Orientation: x = 3.3,  y = 4.9,  z = 2.7
+Item 2 Location: x = 5.25,   y = -2.5,   z = 2.75            Orientation: x = 3.3,  y = 4.9,  z = 2.7
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 45.833%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.186 seconds
+-----------------------------------------------------------------------------------------------------------
+
+39.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 4.875,  y = -3.125, z = 1.5             Orientation: x = 3.7,  y = 6.2,  z = 1.3
+Item 2 Location: x = 1.5,    y = -3.5,   z = 3.0             Orientation: x = 3.0,  y = 7.0,  z = 3.0
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 46.741%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.287 seconds
+-----------------------------------------------------------------------------------------------------------
+
+40.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 3.75,   y = -2.0,   z = 1.0             Orientation: x = 7.3,  y = 4.0,  z = 0.9
+Item 2 Location: x = 2.25,   y = -1.875, z = 2.5             Orientation: x = 4.4,  y = 3.7,  z = 1.3
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 26.339%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.237 seconds
+-----------------------------------------------------------------------------------------------------------
+
+41.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.25,   y = -2.0,   z = 3.0             Orientation: x = 2.4,  y = 4.0,  z = 2.2
+Item 2 Location: x = 4.25,   y = -3.0,   z = 0.75            Orientation: x = 8.43, y = 5.85, z = 0.73
+
+Placement Order: Item 2, Item 1
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 28.929%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.222 seconds
+-----------------------------------------------------------------------------------------------------------
+
+42.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.75,   y = -1.875, z = 3.0             Orientation: x = 3.5,  y = 3.7,  z = 2.8
+Item 2 Location: x = 5.25,   y = -1.875, z = 3.0             Orientation: x = 3.5,  y = 3.7,  z = 2.8
+
+Placement Order: Item 1, Item 2
+
+Number of items in order: 2
+Number of items packed: 2
+Volume Utilization: 37.5%
+Box Used: 10.0, 7.0, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 0.0
+Box Used Volume: 210.0 in3
+Execution Time: 0.161 seconds
+-----------------------------------------------------------------------------------------------------------
+
+43.  -----------------------------------------------------------------------------------------------------------
+For an origin at the back left bottom corner of a box:
+Item 1 Location: x = 1.5,    y = -4.5,   z = 2.75            Orientation: x = 2.8,  y = 8.8,  z = 2.7
+Item 2 Location: x = 4.5,    y = -4.5,   z = 2.75            Orientation: x = 2.8,  y = 8.8,  z = 2.7
+Item 3 Location: x = 7.5,    y = -4.5,   z = 2.75            Orientation: x = 2.8,  y = 8.8,  z = 2.7
+
+Placement Order: Item 1, Item 2, Item 3
+
+Number of items in order: 3
+Number of items packed: 3
+Volume Utilization: 57.895%
+Box Used: 13.5, 9.5, 3.0		Box Recommended: 10.0, 7.0, 3.0    Volume +/- From Recommended Box: 174.75
+Box Used Volume: 384.75 in3
+Execution Time: 2.862 seconds
+-----------------------------------------------------------------------------------------------------------
+

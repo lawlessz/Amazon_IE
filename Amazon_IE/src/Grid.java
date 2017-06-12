@@ -1,4 +1,11 @@
-
+/*
+ * Developed By Zach Lawless for Amazon capstone project UW 2017
+ * Will produce possible boxes and packaging locations for a range of Amazon Boxes.
+ * 
+ * 
+ * Contact z.law@comcast.net for questions, I can modify and clarify things swiftly
+ * 
+ */
 
 //Yes I made two grids per node... to be fixed
 public class Grid {
@@ -12,9 +19,10 @@ public class Grid {
 	//public grid g;
 	public int index = 0;
 	int vol = 0;
+	int Amazonvol;
 	
 	//units and cb_size tbd
-	public Grid(int xdim, int ydim, int zdim, int cb_size, int volume) {
+	public Grid(int xdim, int ydim, int zdim, int cb_size, int volume, int Amazonvol) {
 		this.xdimen = xdim+2;
 		this.ydimen = ydim+2;
 		this.zdimen = zdim;
@@ -25,6 +33,7 @@ public class Grid {
 		populateGradient(gtable,ydim+2,xdim+2);
 		populate(table,ydim+2,xdim+2);
 		//index = 0;
+		this.Amazonvol=Amazonvol;
 		
 		
 	}
@@ -34,7 +43,7 @@ public class Grid {
 		this.ydimen = g.ydimen;
 		this.zdimen = g.zdimen;
 		this.cb_size = g.cb_size;
-		
+		this.vol = g.vol;
 		this.table = arrayCopy(g.table);
 		this.gtable = arrayCopyInt(g.gtable);
 		this.index = g.index;

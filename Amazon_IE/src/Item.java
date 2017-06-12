@@ -1,3 +1,13 @@
+import java.util.ArrayList;
+import java.util.Collections;
+/*
+ * Developed By Zach Lawless for Amazon capstone project UW 2017
+ * Will produce possible boxes and packaging locations for a range of Amazon Boxes.
+ * 
+ * 
+ * Contact z.law@comcast.net for questions, I can modify and clarify things swiftly
+ * 
+ */
 //Item should process an item within the class and result with 
 //an item object that can be added to an order
 public class Item implements java.io.Serializable {
@@ -8,6 +18,7 @@ public class Item implements java.io.Serializable {
 	int xdim;//these may need to be parsed
 	int ydim;
 	int zdim;
+	String b;
 	public int xdim2;//these may need to be parsed
 	public int ydim2;
 	public int zdim2;
@@ -26,6 +37,17 @@ public class Item implements java.io.Serializable {
 		this.ydim2 = y;
 		this.zdim2 = z;
 		this.placed = false;
+	}
+	
+	public Item (int x, int y, int z, String b1) {
+		this.xdim = x;
+		this.ydim = y;
+		this.zdim = z;
+		this.xdim2 = x;
+		this.ydim2 = y;
+		this.zdim2 = z;
+		this.placed = false;
+		this.b = b1;
 	}
 	
 	public Item(Item I) {
@@ -48,6 +70,8 @@ public class Item implements java.io.Serializable {
 	public void setZ(int n){
 		this.zdim = n;
 	}
-	}
+
+	
+}
 	
 
